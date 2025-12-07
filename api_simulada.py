@@ -2,6 +2,14 @@ from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional, Dict, Any
+from data import (
+    ESTUDIANTES,
+    PROFESORES,
+    DIRECTIVOS,
+    CURSOS_ESTUDIANTE,
+    CURSOS_PROFESOR,
+    ESTUDIANTES_CURSO
+)
 
 # ==================== CONFIGURACIÓN ====================
 
@@ -28,89 +36,6 @@ class StandardResponse(BaseModel):
     ok: bool
     data: Optional[Any] = None
     msg: str
-
-# ==================== DATOS SIMULADOS ====================
-ESTUDIANTES = {
-    "1234567": {
-        "codigo": "1234567",
-        "nombre": "Juan Pérez",
-        "email": "juan.perez@ufps.edu.co",
-        "programa": "Ingeniería de Sistemas",
-        "semestre": 5,
-        "estado": "activo"
-    },
-    "2345678": {
-        "codigo": "2345678",
-        "nombre": "María García",
-        "email": "maria.garcia@ufps.edu.co",
-        "programa": "Ingeniería Civil",
-        "semestre": 3,
-        "estado": "activo"
-    },
-    "3456789": {
-        "codigo": "3456789",
-        "nombre": "Carlos López",
-        "email": "carlos.lopez@ufps.edu.co",
-        "programa": "Administración",
-        "semestre": 7,
-        "estado": "activo"
-    }
-}
-
-PROFESORES = {
-    "1000001": {
-        "codigo": "1000001",
-        "nombre": "Dr. Fernando Rodríguez",
-        "email": "fernando.rodriguez@ufps.edu.co",
-        "departamento": "Ingeniería de Sistemas",
-        "estado": "activo"
-    },
-    "1000002": {
-        "codigo": "1000002",
-        "nombre": "Ing. Patricia Martínez",
-        "email": "patricia.martinez@ufps.edu.co",
-        "departamento": "Ingeniería Civil",
-        "estado": "activo"
-    }
-}
-
-DIRECTIVOS = {
-    "2000001": {
-        "codigo": "2000001",
-        "nombre": "MSc. Roberto Díaz",
-        "email": "roberto.diaz@ufps.edu.co",
-        "cargo": "Decano",
-        "facultad": "Ingeniería",
-        "estado": "activo"
-    }
-}
-
-CURSOS_ESTUDIANTE = {
-    "1234567": [
-        {"codigo": "1234567", "nombre": "Bases de Datos", "creditos": 3, "semestre": 5, "estado": "cursando"},
-        {"codigo": "1234568", "nombre": "Programación Web", "creditos": 4, "semestre": 5, "estado": "cursando"},
-        {"codigo": "1234569", "nombre": "Ingeniería de Software", "creditos": 4, "semestre": 5, "estado": "cursando"}
-    ],
-    "2345678": [
-        {"codigo": "1234570", "nombre": "Análisis Estructural", "creditos": 4, "semestre": 3, "estado": "cursando"},
-        {"codigo": "1234571", "nombre": "Resistencia de Materiales", "creditos": 3, "semestre": 3, "estado": "cursando"}
-    ]
-}
-
-CURSOS_PROFESOR = {
-    "1000001": [
-        {"codigo": "1234567", "nombre": "Bases de Datos", "grupo": "A", "estudiantes": 30},
-        {"codigo": "1234568", "nombre": "Programación Web", "grupo": "B", "estudiantes": 25}
-    ]
-}
-
-ESTUDIANTES_CURSO = {
-    "1234567A": [
-        {"codigo": "1234567", "nombre": "Juan Pérez", "email": "juan.perez@ufps.edu.co", "calificacion": 4.2, "asistencia": 95, "riesgo": 5, "ac012": False},
-        {"codigo": "2345678", "nombre": "María García", "email": "maria.garcia@ufps.edu.co", "calificacion": 3.8, "asistencia": 87, "riesgo": 5, "ac012": False},
-        {"codigo": "3456789", "nombre": "Carlos López", "email": "carlos.lopez@ufps.edu.co", "calificacion": 2.1, "asistencia": 65, "riesgo": 1, "ac012": True}
-    ]
-}
 
 # ==================== FUNCIONES DE UTILIDAD ====================
 
