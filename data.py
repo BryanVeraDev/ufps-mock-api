@@ -87,6 +87,14 @@ ESTUDIANTES = {
         "semestre": 8,
         "estado": "activo",
     },
+    "1092028": {
+        "codigo": "1092028",
+        "nombre": "Kelly Dayana Saavedra Rojas",
+        "email": "kellydayanasaro@ufps.edu.co",
+        "programa": "Ingeniería Electromecánica",
+        "semestre": 8,
+        "estado": "activo",
+    },
 }
 
 PROFESORES = {
