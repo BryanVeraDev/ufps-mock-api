@@ -45,7 +45,7 @@ ESTUDIANTES = {
         "email": "bryanalejandrovo@ufps.edu.co",
         "programa": "Ingeniería de Sistemas",
         "semestre": 8,
-        "estado": "activo",
+        "estado": "inactivo",
     },
     "1152280": {
         "codigo": "1152280",
